@@ -7,23 +7,30 @@ pipeline {
       }
     }
 
-    stage('Train') {
+    stage('Train Model') {
       parallel {
-        stage('Train') {
+        stage('Test') {
           steps {
             sh '''cd pytorch
+python -m ensurepip --default-pip
 pip install torch
 python linear_regression.py'''
           }
         }
 
-        stage('Test') {
+        stage('Train') {
           steps {
             sh '''cd pytorch
 '''
           }
         }
 
+      }
+    }
+
+    stage('Eval Metric') {
+      steps {
+        echo 'metrics is good'
       }
     }
 
