@@ -53,3 +53,4 @@ for epoch in range(epochs):
 
 preds = model(x_train)
 print(preds)
+torch.save(model, 'linearRegression.pt')
