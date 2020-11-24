@@ -7,5 +7,12 @@ pipeline {
       }
     }
 
+    stage('Train') {
+      steps {
+        sh '''cd pytorch
+python linear_regression.py'''
+      }
+    }
+
   }
 }
