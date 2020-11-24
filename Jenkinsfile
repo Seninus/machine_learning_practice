@@ -8,10 +8,22 @@ pipeline {
     }
 
     stage('Train') {
-      steps {
-        sh '''cd pytorch
+      parallel {
+        stage('Train') {
+          steps {
+            sh '''cd pytorch
 pip install torch
 python linear_regression.py'''
+          }
+        }
+
+        stage('Test') {
+          steps {
+            sh '''cd pytorch
+'''
+          }
+        }
+
       }
     }
 
