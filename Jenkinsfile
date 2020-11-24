@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
           steps {
             sh '''cd pytorch
-apt-get install python
+sudo apt-get install python
 pip install torch
 python linear_regression.py'''
           }
