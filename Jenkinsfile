@@ -10,6 +10,8 @@ pipeline {
     stage('Train') {
       steps {
         sh '''cd pytorch
+!pip install torch
+
 python linear_regression.py'''
       }
     }
