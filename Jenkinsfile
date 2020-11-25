@@ -13,7 +13,7 @@ pipeline {
           steps {
             sh '''cd pytorch
 
-apt-get install sudo
+sudo -i
 sudo apt-get install python3-pip python-dev
 python --version
 
