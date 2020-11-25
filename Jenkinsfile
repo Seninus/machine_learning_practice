@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
           steps {
             sh '''cd pytorch
-su
+
 apt-get install sudo
 sudo apt-get install python3-pip python-dev
 python --version
